@@ -10,8 +10,13 @@ body {
   font-family: roboto;
   background: linear-gradient(90deg, rgba(0,178,195,1) 0%, rgba(0,115,110,1) 100%);
 }
-
 .calculator-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-container {
   display: grid;
   align-content: center;
   justify-content: center;
@@ -20,18 +25,25 @@ body {
   margin-top: 30px;
   border: none;
   border-radius: 15px;
+  background-color: rgb(38, 38, 38);
+  width: fit-content;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 .span-two {
   grid-column: span 2;
 }
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(84, 84, 84, 0.578);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   flex-direction: column;
   padding: 8px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 10px;
 }
 .previous {
   font-size: 1rem;
@@ -43,13 +55,17 @@ body {
 }
 
   button {
-  border: 3px solid white;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgb(66, 66, 66);
   font-size: 1.5rem;
   outline: none;
   cursor: pointer;
   transition: all 0.08s ease-in-out;
+  border: none;
+  margin: 5px;
+  border-radius: 15px;
+  color: #fff;
 }
 button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(135, 135, 135, 0.9);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
