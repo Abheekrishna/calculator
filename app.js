@@ -1,24 +1,30 @@
-/* 
-Steps
+class CALCULATOR {
+    constructor() {
+        this.total = 0;
+    }
 
-step1: user needs to select number and operatons
+    add(a, b) {
+       this.total = a + b;
+    }
 
-*/
+    subtraction(a, b) {
+        this.total = a - b;
+    }
 
+    multiplication (a, b) {
+        this.total = a * b;
+    }
 
+    division(a, b) {
+        if(a > 0 && b > 0) {
+            this.total = a / b;
+        } else {
+            return;
+        }
+    }
+}
 
+const basic = new CALCULATOR();
 
-const operation = document.querySelectorAll('[data-operations]');
-const numbers = document.querySelectorAll('[data-numbers]');
-const allClear = document.querySelector('[data-all-clear]');
-const equals = document.querySelector('[data-equals]');
-const deleteBtn = document.querySelector('[data-delete]');
-const previousOperandText = document.querySelector('[data-previous-operand]');
-const currentOperandText = document.querySelector('[data-current-operand]');
-
-
-numbers.forEach(button => {
-    button.addEventListener('click', () => {
-        
-    })
-})
+basic.division(15, 5);
+console.log(basic.total)
