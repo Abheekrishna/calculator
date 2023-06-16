@@ -1,30 +1,53 @@
 class CALCULATOR {
-    constructor() {
-        this.total = 0;
+    constructor(previousOperandText, currentOperandText) {
+        this.previousOperandText = previousOperandText;
+        this.currentOperandText = currentOperandText;
+        this.clear();
     }
 
-    add(a, b) {
-       this.total = a + b;
+    clear() {
+        this.currentOperand = '';
+        this.previousOperand = '';
+        this.operation = undefined;
     }
 
-    subtraction(a, b) {
-        this.total = a - b;
+    delete() {
+
     }
 
-    multiplication (a, b) {
-        this.total = a * b;
+    appendNumber(number) {
+        this.currentOperand = number;
     }
 
-    division(a, b) {
-        if(a > 0 && b > 0) {
-            this.total = a / b;
-        } else {
-            return;
-        }
+    chooseOperation(operation) {
+
     }
+
+    compute() {
+
+    }
+
+    updateDisplay() {
+        this.currentOperandText.innerText = this.currentOperand;
+    }
+
+    
 }
 
-const basic = new CALCULATOR();
 
-basic.division(15, 5);
-console.log(basic.total)
+const numberBtns = document.querySelectorAll('[data-numbers]');
+const operationBtns = document.querySelectorAll('[data-operations]');
+const equalBtn = document.querySelector('[data-equals]');
+const currentOperandText = document.querySelector('[data-current-operand]');
+const previousOperandText = document.querySelector('[data-previous-operand]');
+
+
+
+const calculator = new CALCULATOR(previousOperandText, currentOperandText)
+
+numberBtns.forEach((button) => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
