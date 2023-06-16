@@ -113,3 +113,7 @@ deleteBtn.addEventListener('click', () => {
     calculator.delete();
     calculator.updateDisplay();
 })
+
+const year = document.getElementById('year');
+const currYear = (new Date()).getFullYear();
+year.innerText = `${currYear}`;
